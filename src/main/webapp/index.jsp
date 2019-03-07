@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-你好！明天会更好
+你好！
 </body>
 </html>
