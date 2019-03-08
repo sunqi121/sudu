@@ -59,7 +59,7 @@ public class jbxxtxController  {
         System.out.println("保存个人基本信息测试：："+grxx);
         grxxService.updategrxb(grxx);
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("personalWeb/ryxx/gr_ryxx/你好吗？");
+        mav.setViewName("personalWeb/ryxx/gr_ryxx哈哈");
         toryxx(grxx,request,map);
         return mav;
     }
