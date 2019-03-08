@@ -41,7 +41,7 @@ public class jbxxtxController  {
         map.addAttribute("grxx",grxx);
 
         System.out.println("刷新页面时检测信息grxx  ："+grxx);
-        mav.setViewName("personalWeb/ryxx/哈2哈");
+        mav.setViewName("personalWeb/ryxx/98");
         return mav;
     }
 
