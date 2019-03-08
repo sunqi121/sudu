@@ -33,6 +33,7 @@ public class jlxmglController {
 			jlxmglVo jlxm,HttpServletRequest request) {
 		/*System.out.println("666jlxm:"+jlxm);*/
 		System.out.println("我是本地仓库222打");
+		System.out.println("我是假的远程仓库");
 			return jlxmglSer.findJlxm(page,rows,jlxm);
 
 	}
