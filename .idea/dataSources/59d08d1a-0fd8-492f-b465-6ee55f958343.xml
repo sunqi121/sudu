@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="HOPETEST@47.92.121.150">
+  <database-model serializer="dbm" rdbms="DB2" format-version="4.11">
+    <root id="1">
+      <ServerVersion>0.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="HOPETEST">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="NULLID"/>
+    <schema id="4" parent="1" name="SQLJ"/>
+    <schema id="5" parent="1" name="SYSCAT"/>
+    <schema id="6" parent="1" name="SYSFUN"/>
+    <schema id="7" parent="1" name="SYSIBM"/>
+    <schema id="8" parent="1" name="SYSIBMADM"/>
+    <schema id="9" parent="1" name="SYSIBMINTERNAL"/>
+    <schema id="10" parent="1" name="SYSIBMTS"/>
+    <schema id="11" parent="1" name="SYSPROC"/>
+    <schema id="12" parent="1" name="SYSPUBLIC"/>
+    <schema id="13" parent="1" name="SYSSTAT"/>
+    <schema id="14" parent="1" name="SYSTOOLS"/>
+    <table id="15" parent="2" name="T_CORE_USER">
+      <Comment>用户</Comment>
+    </table>
+    <column id="16" parent="15" name="ID">
+      <Position>1</Position>
+      <Comment>主键</Comment>
+      <DataType>DECIMAL(11)|3s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
+    </column>
+    <column id="17" parent="15" name="VERSION">
+      <Position>2</Position>
+      <Comment>版本号</Comment>
+      <DataType>DECIMAL(10)|3s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
+    </column>
+    <column id="18" parent="15" name="USER_NAME">
+      <Position>3</Position>
+      <Comment>用户名称</Comment>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="19" parent="15" name="PASSWORD">
+      <Position>4</Position>
+      <Comment>密码</Comment>
+      <DataType>VARCHAR(32)|12s</DataType>
+    </column>
+    <column id="20" parent="15" name="AVAILABLE">
+      <Position>5</Position>
+      <Comment>是否有效</Comment>
+      <DataType>DECIMAL(1)|3s</DataType>
+    </column>
+    <column id="21" parent="15" name="LAST_LOGIN_TIME">
+      <Position>6</Position>
+      <Comment>最后登录时间</Comment>
+      <DataType>DATE|91s</DataType>
+    </column>
+    <column id="22" parent="15" name="LAST_LOGIN_IP">
+      <Position>7</Position>
+      <Comment>最后登录IP</Comment>
+      <DataType>VARCHAR(64)|12s</DataType>
+    </column>
+    <column id="23" parent="15" name="CREATE_TIME">
+      <Position>8</Position>
+      <Comment>创建时间</Comment>
+      <DataType>DATE|91s</DataType>
+    </column>
+    <column id="24" parent="15" name="CREATOR">
+      <Position>9</Position>
+      <Comment>创建者ID</Comment>
+      <DataType>DECIMAL(11)|3s</DataType>
+    </column>
+    <column id="25" parent="15" name="LAST_MODIFY_TIME">
+      <Position>10</Position>
+      <Comment>最后修改时间</Comment>
+      <DataType>DATE|91s</DataType>
+    </column>
+    <column id="26" parent="15" name="LAST_MODIFIER">
+      <Position>11</Position>
+      <Comment>最后修改者</Comment>
+      <DataType>DECIMAL(11)|3s</DataType>
+    </column>
+    <column id="27" parent="15" name="LOGIN_TIME">
+      <Position>12</Position>
+      <Comment>当前登录时间</Comment>
+      <DataType>DATE|91s</DataType>
+    </column>
+    <column id="28" parent="15" name="LOGIN_IP">
+      <Position>13</Position>
+      <Comment>当前登录IP</Comment>
+      <DataType>VARCHAR(64)|12s</DataType>
+    </column>
+    <column id="29" parent="15" name="BELONG_AREA_ID">
+      <Position>14</Position>
+      <Comment>归属区域ID</Comment>
+      <DataType>DECIMAL(11)|3s</DataType>
+    </column>
+    <column id="30" parent="15" name="MEMO">
+      <Position>15</Position>
+      <Comment>备注</Comment>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="31" parent="15" name="USER_TYPE">
+      <Position>16</Position>
+      <DataType>DECIMAL(1)|3s</DataType>
+    </column>
+    <column id="32" parent="15" name="USER_ALIAS">
+      <Position>17</Position>
+      <Comment>登录名</Comment>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="33" parent="15" name="USER_NUM">
+      <Position>18</Position>
+      <Comment>用户编码</Comment>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="34" parent="15" name="MODIFY_PASSWORD">
+      <Position>19</Position>
+      <Comment>密码</Comment>
+      <DataType>DECIMAL(1)|3s</DataType>
+    </column>
+    <column id="35" parent="15" name="ROLE_ID">
+      <Position>20</Position>
+      <Comment>角色</Comment>
+      <DataType>DECIMAL(11)|3s</DataType>
+    </column>
+    <index id="36" parent="15" name="USERKEY">
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="15" name="USERKEY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

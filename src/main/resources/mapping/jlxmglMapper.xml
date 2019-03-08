@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwcyzhpt.modules.manage.dao.jlxmglMapper">
+  <resultMap id="BaseResultMap" type="com.jwcyzhpt.modules.manage.entity.vo.jlxmglVo">
+    <result column="JLXMGL_GUID" jdbcType="VARCHAR" property="jlxmGuid" />
+    <result column="JLXMGL_ID" jdbcType="VARCHAR" property="jlxmId" />
+    <result column="JLXMGL_NAME" jdbcType="VARCHAR" property="jlxmName" />
+    <result column="CTIME" jdbcType="DATE" property="jlxmCtime" />
+    <result column="STATE" jdbcType="VARCHAR" property="jlxmState" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="jlxmRemarks" />
+
+  </resultMap>
+  
+  <!--查询奖励项目-->
+  <select id="findJlxm"   resultMap="BaseResultMap">
+    	select *  FROM SN_JLXMGL
+  </select>
+
+  <!--新增奖励项目-->
+  <sql id="addJlxm">
+    <trim suffixOverrides=",">
+
+      JLXMGL_GUID,
+
+      <if test="jlxmId != null and !jlxmId.equals(&quot;&quot;)">
+        JLXMGL_ID,
+      </if>
+      <if test="jlxmName != null and !jlxmName.equals(&quot;&quot;)">
+        JLXMGL_NAME,
+      </if>
+      <if test="jlxmCtime != null and !jlxmCtime.equals(&quot;&quot;)">
+        CTIME,
+      </if>
+      <if test="jlxmState != null and !jlxmState.equals(&quot;&quot;)">
+        STATE,
+      </if>
+      <if test="jlxmRemarks != null and !jlxmRemarks.equals(&quot;&quot;)">
+        REMARKS,
+      </if>
+
+    </trim>
+  </sql>
+  <!-- 定义第二个sql片段，第二个对应?，key属性值任意并且唯一 -->
+  <sql id="JlxmValue">
+    <trim suffixOverrides=",">
+
+      SYS_GUID(),
+
+      <if test="jlxmId != null and !jlxmId.equals(&quot;&quot;)">
+        #{jlxmId},
+      </if>
+      <if test="jlxmName != null and !jlxmName.equals(&quot;&quot;)">
+        #{jlxmName},
+      </if>
+
+      <if test="jlxmCtime != null and !jlxmCtime.equals(&quot;&quot;)">
+        TO_DATE(substr(#{jlxmCtime,jdbcType=VARCHAR},1,10), 'yyyy-MM-dd'),
+      </if>
+      <if test="jlxmState != null and !jlxmState.equals(&quot;&quot;)">
+        #{jlxmState},
+      </if>
+      <if test="jlxmRemarks != null and !jlxmRemarks.equals(&quot;&quot;)">
+        #{jlxmRemarks},
+      </if>
+    </trim>
+  </sql>
+  <!-- 新增奖励项目 -->
+  <insert id="insertJlxm" parameterType="com.jwcyzhpt.modules.manage.entity.vo.jlxmglVo">
+    insert into SN_JLXMGL (<include refid="addJlxm"/>) values(<include refid="JlxmValue"/>)
+  </insert>
+
+
+  <!--  删除奖励项目 -->
+  <delete id="delJlxm" parameterType="com.jwcyzhpt.modules.manage.entity.vo.jlxmglVo">
+          DELETE FROM SN_JLXMGL  WHERE JLXMGL_GUID=#{jlxmGuid}
+  </delete>
+
+  <!--修改奖励项目-->
+  <update id="updateJlxm" parameterType="com.jwcyzhpt.modules.manage.entity.vo.jlxmglVo">
+    UPDATE SN_JLXMGL SET
+    <trim prefix="set" suffixOverrides=",">
+
+      SYS_GUID(),
+      <if test="majorId != null and !majorId.equals(&quot;&quot;)">
+        #{majorId},
+      </if>
+      <if test="majorName != null and !majorName.equals(&quot;&quot;)">
+        #{majorName},
+      </if>
+      <if test="majorCtime != null and !majorCtime.equals(&quot;&quot;)">
+        TO_DATE(substr(#{majorCtime,jdbcType=VARCHAR},1,10), 'yyyy-MM-dd'),
+      </if>
+      <if test="majorState != null and !majorState.equals(&quot;&quot;)">
+        #{majorState},
+      </if>
+      <if test="majorRemarks != null and !majorRemarks.equals(&quot;&quot;)">
+        #{majorRemarks},
+      </if>
+     </trim>
+
+  </update>
+
+
+</mapper>

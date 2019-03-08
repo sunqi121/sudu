@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jwcyzhpt.modules.uploadAttachment.dao.UploadAttachmentMapper">
+
+    <resultMap id="UploadAttachmentResultMap" type="com.jwcyzhpt.modules.uploadAttachment.entity.UploadAttachment">
+        <result column="BIA_ID" jdbcType="VARCHAR" property="biaId"/>
+        <result column="BIA_GUID" jdbcType="VARCHAR" property="biaGuId"/>
+        <result column="BIA_UESR_BM" jdbcType="VARCHAR" property="biaUesrBm"/>
+        <result column="BIA_ATTACHMENT_TYPE" jdbcType="VARCHAR" property="biaAttachmentType"/>
+        <result column="BIA_ATTACHMENT_NAME" jdbcType="VARCHAR" property="biaAttachmentName"/>
+        <result column="BIA_ATTACHMENT_BLOB" jdbcType="BLOB" property="biaAttachmentBlob"/>
+        <result column="BIA_CREATE_TIME" jdbcType="DATE" property="biaCreateTime"/>
+        <result column="SBLB_NAME" jdbcType="VARCHAR" property="sblbName"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMap" type="com.jwcyzhpt.modules.supervise.entity.DeclarationCategory">
+        <result column="SBLB_ID" jdbcType="VARCHAR" property="id"/>
+        <result column="SBLB_NAME" jdbcType="VARCHAR" property="text"/>
+        <result column="SBLB_FJID" jdbcType="VARCHAR" property="lbfjid"/>
+        <result column="SBLB_ZT" jdbcType="VARCHAR" property="lbzt"/>
+        <result column="SBLB_XLLX" jdbcType="VARCHAR" property="xllx"/>
+    </resultMap>
+
+    <!--查询附件表-->
+    <select id="findBasicInformationAttaPage" resultMap="UploadAttachmentResultMap">
+        SELECT
+            BIA.BIA_ID,
+            BIA.BIA_GUID,
+            BIA.BIA_UESR_BM,
+            SBLB.SBLB_NAME,
+            BIA.BIA_ATTACHMENT_NAME,
+            BIA.BIA_ATTACHMENT_BLOB
+        FROM
+            SN_BASIC_INFORMATION_ATTA BIA
+            LEFT JOIN SN_SBLB SBLB ON BIA.BIA_ATTACHMENT_TYPE = SBLB.SBLB_ID
+        WHERE
+            BIA_UESR_BM = #{biaUesrBm}
+        ORDER BY
+            BIA_CREATE_TIME DESC
+    </select>
+
+    <!--预览-->
+    <select id="previewAtta" resultMap="UploadAttachmentResultMap">
+        SELECT * FROM SN_BASIC_INFORMATION_ATTA WHERE BIA_ID = #{biaId}
+    </select>
+
+    <delete id="delBasicInformationAtta" parameterType="java.lang.String">
+        DELETE FROM SN_BASIC_INFORMATION_ATTA WHERE BIA_ID = #{biaId}
+    </delete>
+
+    <insert id="addUploadAttachment" parameterType="com.jwcyzhpt.modules.uploadAttachment.entity.UploadAttachment">
+        <selectKey keyProperty="biaId" order="BEFORE" resultType="java.lang.String">
+            select SEQ_BASIC_INFORMATION_ATTA.NEXTVAL as biaId from DUAL
+        </selectKey>
+        insert into SN_BASIC_INFORMATION_ATTA
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="biaId != null">
+                BIA_ID,
+            </if>
+            <if test="biaGuId != null">
+                BIA_GUID,
+            </if>
+            <if test="biaUesrBm != null">
+                BIA_UESR_BM,
+            </if>
+            <if test="biaAttachmentType != null">
+                BIA_ATTACHMENT_TYPE,
+            </if>
+            <if test="biaAttachmentName != null">
+                BIA_ATTACHMENT_NAME,
+            </if>
+            <if test="biaAttachmentBlob != null">
+                BIA_ATTACHMENT_BLOB,
+            </if>
+            <if test="biaCreateTime != null">
+                BIA_CREATE_TIME,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="biaId != null">
+                #{biaId},
+            </if>
+            <if test="biaGuId != null">
+                #{biaGuId},
+            </if>
+            <if test="biaUesrBm != null">
+                #{biaUesrBm},
+            </if>
+            <if test="biaAttachmentType != null">
+                #{biaAttachmentType},
+            </if>
+            <if test="biaAttachmentName != null">
+                #{biaAttachmentName},
+            </if>
+            <if test="biaAttachmentBlob != null">
+                #{biaAttachmentBlob},
+            </if>
+            <if test="biaCreateTime != null">
+                #{biaCreateTime},
+            </if>
+        </trim>
+    </insert>
+
+    <!--获取附件类型信息-->
+    <select id="getAttaType" resultMap="BaseResultMap">
+        select SBLB_ID,SBLB_NAME
+          from SN_SBLB
+            where SBLB_XLLX='fjlx' AND SBLB_FJID = 12
+    </select>
+</mapper>

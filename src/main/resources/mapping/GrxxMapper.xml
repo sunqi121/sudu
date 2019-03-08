@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwcyzhpt.modules.supervise.dao.GrxxMapper">
+
+    <resultMap id="GrxxMap" type="com.jwcyzhpt.modules.supervise.entity.Grxx">
+        <result column="SN_NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="SN_ONCE_NAME" jdbcType="VARCHAR" property="onceName"/>
+        <result column="SN_SEX" jdbcType="VARCHAR" property="sex"/>
+        <result column="SN_NATION" jdbcType="VARCHAR" property="nation"/>
+        <result column="SN_BIRTH_DATE" jdbcType="VARCHAR" property="birthDate"/>
+        <result column="SN_SFZHM" jdbcType="DATE" property="sfzhm"/>
+        <result column="SN_PHYSICAL_CONDITION" jdbcType="VARCHAR" property="stzk"/>
+        <result column="SN_BIRTH_PLACE" jdbcType="DATE" property="birthPlace"/>
+        <result column="SN_CONTACT_NUMBER" jdbcType="VARCHAR" property="contactNumber"/>
+        <result column="SN_PERSONAL_NUMBER" jdbcType="VARCHAR" property="personalNumber"/>
+        <result column="SN_WAGES" jdbcType="VARCHAR" property="wages"/>
+        <result column="SN_POSTAL_CODE" jdbcType="VARCHAR" property="postalCode"/>
+        <result column="SN_RSDACFDW" jdbcType="VARCHAR" property="rsdacfdw"/>
+        <result column="SN_CLHJDZ" jdbcType="VARCHAR" property="clhjdz"/>
+        <result column="USER_BM" jdbcType="VARCHAR" property="userBm"/>
+        <result column="SN_WYLB" jdbcType="VARCHAR" property="wylb"/>
+        <result column="SN_WYDJ" jdbcType="VARCHAR" property="wydj"/>
+        <result column="SN_WYCJ" jdbcType="VARCHAR" property="wycj"/>
+        <result column="SN_ZPID" jdbcType="VARCHAR" property="zpId"/>
+        <result column="SN_FJID" jdbcType="VARCHAR" property="fjId"/>
+        <result column="SN_WORK_UNIT" jdbcType="VARCHAR" property="workUnit"/>
+        <result column="SN_SFXSSYDW" jdbcType="VARCHAR" property="sfxssydw"/>
+        <result column="SN_SHXSQTDW" jdbcType="VARCHAR" property="shxsqtdw"/>
+        <result column="SN_XZZW" jdbcType="VARCHAR" property="xzzw"/>
+        <result column="SN_XZZWRPSJ" jdbcType="VARCHAR" property="xzzwrpsj"/>
+        <result column="SN_XCSHZZYJSGZ" jdbcType="VARCHAR" property="xcshzzyjsgz"/>
+        <result column="SN_ZJZCZSBH" jdbcType="VARCHAR" property="zjzczsbh"/>
+        <result column="SN_RZZGQDSJ" jdbcType="VARCHAR" property="rzzgqdsj"/>
+        <result column="SN_CJGZSJ" jdbcType="VARCHAR" property="cjgzsj"/>
+        <result column="SN_XZZYJSZW" jdbcType="VARCHAR" property="xzzyjszw"/>
+        <result column="SN_RPZGPRSJ" jdbcType="VARCHAR" property="rpzgprsj"/>
+        <result column="SN_RZZGSPJG" jdbcType="VARCHAR" property="rzzgspjg"/>
+        <result column="SN_XRDRZYZW" jdbcType="VARCHAR" property="xrdrzyzw"/>
+        <result column="SN_DERZGQDSJ" jdbcType="VARCHAR" property="derzgqdsj"/>
+        <result column="SN_GJZCZY" jdbcType="VARCHAR" property="gjzczy"/>
+        <result column="SN_GJZCZSBH" jdbcType="VARCHAR" property="gjzczsbh"/>
+        <result column="SN_GJZCZSHDSJ" jdbcType="VARCHAR" property="gjzczshdsj"/>
+        <result column="SN_GJZCSPJG" jdbcType="VARCHAR" property="gjzcspjg"/>
+        <result column="SN_HSJRZGGCTRHZW" jdbcType="VARCHAR" property="hsjrzggctrhzw"/>
+        <result column="SN_HSHDCJHZMZDPRHZW" jdbcType="VARCHAR" property="hshdcjhzmzdprhzw"/>
+        <result column="SN_CJHZXSTTHZWHJZ" jdbcType="VARCHAR" property="cjhzxstthzwhjz"/>
+        <result column="SN_SBLB" jdbcType="VARCHAR" property="sblb"/>
+        <result column="SN_SBZY" jdbcType="VARCHAR" property="sbzy"/>
+        <result column="SN_SBDJ" jdbcType="VARCHAR" property="sbdj"/>
+        <result column="SN_WTJG" jdbcType="VARCHAR" property="wtjg"/>
+        <result column="SN_SBQK" jdbcType="VARCHAR" property="sbqk"/>
+        <result column="SN_TJSH" jdbcType="VARCHAR" property="sbtjsj"/>
+        <result column="SN_SBLX" jdbcType="VARCHAR" property="sblx"/>
+        <result column="SN_PSYJ" jdbcType="VARCHAR" property="sbtjsj"/>
+    </resultMap>
+
+    <resultMap id="jyclxxMap" type="com.jwcyzhpt.modules.supervise.entity.jyclxx">
+        <result column="SN_GRADUATE_SCHOOL" jdbcType="VARCHAR" property="graduateSchool"/>
+        <result column="SN_MAJOR" jdbcType="VARCHAR" property="major"/>
+        <result column="SN_SCHOOL_SYSTEM" jdbcType="VARCHAR" property="schoolSystem"/>
+        <result column="SN_EDUCATION" jdbcType="VARCHAR" property="education"/>
+        <result column="SN_ACADEMIC_DEGREE" jdbcType="VARCHAR" property="academicDegree"/>
+        <result column="SN_GRADUATION_TIME" jdbcType="VARCHAR" property="graduationTime"/>
+        <result column="SN_GUID" jdbcType="VARCHAR" property="guid"/>
+        <result column="SN_JYXXID" jdbcType="VARCHAR" property="jyxxid"/>
+        <result column="USER_BM" jdbcType="VARCHAR" property="userBm"/>
+        <result column="SN_ZGXLSB" jdbcType="VARCHAR" property="zgxlsb"/>
+        <result column="SN_AN" jdbcType="VARCHAR" property="bgan"/>
+    </resultMap>
+
+    <resultMap id="zyzgxxMap" type="com.jwcyzhpt.modules.supervise.entity.zyzgclxx">
+        <result column="SN_ZYZGID" jdbcType="VARCHAR" property="zyzgid"/>
+        <result column="SN_HDSJ" jdbcType="VARCHAR" property="hdsj"/>
+        <result column="SN_HDZYZGMC" jdbcType="VARCHAR" property="hdzyzgmc"/>
+        <result column="SN_HDZYZGZY" jdbcType="VARCHAR" property="hdzyzgzy"/>
+        <result column="SN_GUID" jdbcType="VARCHAR" property="guid"/>
+        <result column="USER_BM" jdbcType="VARCHAR" property="userBm"/>
+    </resultMap>
+
+    <resultMap id="hjxxMap" type="com.jwcyzhpt.modules.supervise.entity.hjqkxx">
+        <result column="SN_HJSJ" jdbcType="VARCHAR" property="hjsj"/>
+        <result column="SN_HJQKID" jdbcType="VARCHAR" property="hjqkid"/>
+        <result column="SN_SJDW" jdbcType="VARCHAR" property="sjdw"/>
+        <result column="SN_HDHJ" jdbcType="VARCHAR" property="hdhj"/>
+        <result column="SN_GUID" jdbcType="VARCHAR" property="guid"/>
+        <result column="USER_BM" jdbcType="VARCHAR" property="userBm"/>
+    </resultMap>
+
+    <!-- 查询个人信息查询集合 -->
+    <select id="finGrxxAll" resultMap="GrxxMap">
+		select SN_ONCE_NAME,SN_SEX,SN_NATION,SN_BIRTH_PLACE,SN_PHYSICAL_CONDITION,SN_CONTACT_NUMBER,SN_PERSONAL_NUMBER,
+        SN_WAGES,SN_POSTAL_CODE,SN_RSDACFDW,SN_CLHJDZ,USER_BM,SN_PSYJ,SN_ZJZCZSBH,SN_RZZGQDSJ,SN_WORK_UNIT,SN_NAME,
+        SN_XZZWRPSJ,SN_SFXSSYDW,SN_SHXSQTDW,SN_XZZW,SN_CJGZSJ,SN_XZZYJSZW,SN_RPZGPRSJ,SN_RZZGSPJG,SN_XRDRZYZW,
+        SN_DERZGQDSJ,SN_GJZCZY,SN_GJZCZSBH,SN_GJZCZSHDSJ,SN_GJZCSPJG,SN_HSJRZGGCTRHZW,SN_HSHDCJHZMZDPRHZW,SN_SFZHM,
+        SN_CJHZXSTTHZWHJZ,SN_XCSHZZYJSGZ,SN_WYLB,SN_WYDJ,SN_WYCJ,SN_SBLX,
+        to_char(SN_BIRTH_DATE,'yyyy-mm-dd') as SN_BIRTH_DATE,to_char(SN_RZZGQDSJ,'yyyy-mm-dd') as SN_RZZGQDSJ,
+        to_char(SN_XZZWRPSJ,'yyyy-mm-dd') as SN_XZZWRPSJ,to_char(SN_CJGZSJ,'yyyy-mm-dd') as SN_CJGZSJ,
+        to_char(SN_RPZGPRSJ,'yyyy-mm-dd') as SN_RPZGPRSJ,to_char(SN_DERZGQDSJ,'yyyy-mm-dd') as SN_DERZGQDSJ,
+        to_char(SN_GJZCZSHDSJ,'yyyy-mm-dd') as SN_GJZCZSHDSJ
+        from SN_PERSONNEL_INFORMATION
+
+        WHERE USER_BM={userBm}
+
+    </select>
+
+    <!-- 查询个人信息查询集合 -->
+    <select id="finGrxxBybm" resultMap="GrxxMap">
+		select SN_ONCE_NAME,SN_SEX,SN_NATION,SN_BIRTH_PLACE,SN_PHYSICAL_CONDITION,SN_CONTACT_NUMBER,SN_PERSONAL_NUMBER,
+        SN_WAGES,SN_POSTAL_CODE,SN_RSDACFDW,SN_CLHJDZ,USER_BM,SN_PSYJ,SN_ZJZCZSBH,SN_RZZGQDSJ,SN_WORK_UNIT,SN_NAME,
+        SN_XZZWRPSJ,SN_SFXSSYDW,SN_SHXSQTDW,SN_XZZW,SN_CJGZSJ,SN_XZZYJSZW,SN_RPZGPRSJ,SN_RZZGSPJG,SN_XRDRZYZW,
+        SN_DERZGQDSJ,SN_GJZCZY,SN_GJZCZSBH,SN_GJZCZSHDSJ,SN_GJZCSPJG,SN_HSJRZGGCTRHZW,SN_HSHDCJHZMZDPRHZW,SN_SFZHM,
+        SN_CJHZXSTTHZWHJZ,SN_XCSHZZYJSGZ,SN_WYLB,SN_WYDJ,SN_WYCJ,SN_SBLX,SN_SBLB,SN_SBZY,SN_SBDJ,SN_WTJG,
+        to_char(SN_BIRTH_DATE,'yyyy-mm-dd') as SN_BIRTH_DATE,to_char(SN_RZZGQDSJ,'yyyy-mm-dd') as SN_RZZGQDSJ,
+        to_char(SN_XZZWRPSJ,'yyyy-mm-dd') as SN_XZZWRPSJ,to_char(SN_CJGZSJ,'yyyy-mm-dd') as SN_CJGZSJ,
+        to_char(SN_RPZGPRSJ,'yyyy-mm-dd') as SN_RPZGPRSJ,to_char(SN_DERZGQDSJ,'yyyy-mm-dd') as SN_DERZGQDSJ,
+        to_char(SN_GJZCZSHDSJ,'yyyy-mm-dd') as SN_GJZCZSHDSJ
+        from SN_PERSONNEL_INFORMATION
+
+        WHERE USER_BM=#{userBm}
+
+    </select>
+
+    <!--修改个人信息-->
+    <update id="updategrxb" parameterType="com.jwcyzhpt.modules.supervise.entity.Grxx">
+        UPDATE SN_PERSONNEL_INFORMATION
+        <trim prefix="set" suffixOverrides=",">
+            <if test="onceName != null and !onceName.equals(&quot;&quot;)">
+                SN_ONCE_NAME=#{onceName,jdbcType=VARCHAR},
+            </if>
+            <if test="nation != null and !nation.equals(&quot;&quot;)">
+                SN_NATION=#{nation,jdbcType=VARCHAR},
+            </if>
+            <if test="stzk != null and !stzk.equals(&quot;&quot;)">
+                SN_PHYSICAL_CONDITION=#{stzk,jdbcType=VARCHAR},
+            </if>
+            <if test="birthPlace != null and !birthPlace.equals(&quot;&quot;)">
+                SN_BIRTH_PLACE=#{birthPlace,jdbcType=VARCHAR},
+            </if>
+            <if test="contactNumber != null and !contactNumber.equals(&quot;&quot;)">
+                SN_CONTACT_NUMBER=#{contactNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="personalNumber != null and !personalNumber.equals(&quot;&quot;)">
+                SN_PERSONAL_NUMBER=#{personalNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="wages != null and !wages.equals(&quot;&quot;)">
+                SN_WAGES=#{wages,jdbcType=VARCHAR},
+            </if>
+            <if test="postalCode != null and !postalCode.equals(&quot;&quot;)">
+                SN_POSTAL_CODE=#{postalCode,jdbcType=VARCHAR},
+            </if>
+            <if test="rsdacfdw != null and !rsdacfdw.equals(&quot;&quot;)">
+                SN_RSDACFDW=#{rsdacfdw,jdbcType=VARCHAR},
+            </if>
+            <if test="wylb != null and !wylb.equals(&quot;&quot;)">
+                SN_WYLB=#{wylb,jdbcType=VARCHAR},
+            </if>
+            <if test="wydj != null and !wydj.equals(&quot;&quot;)">
+                SN_WYDJ=#{wydj,jdbcType=VARCHAR},
+            </if>
+            <if test="wycj != null and !wycj.equals(&quot;&quot;)">
+                SN_WYCJ=#{wycj,jdbcType=VARCHAR},
+            </if>
+            <if test="workUnit != null and !workUnit.equals(&quot;&quot;)">
+                SN_WORK_UNIT=#{workUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="sfxssydw != null and !sfxssydw.equals(&quot;&quot;)">
+                SN_SFXSSYDW=#{sfxssydw,jdbcType=VARCHAR},
+            </if>
+            <if test="shxsqtdw != null and !shxsqtdw.equals(&quot;&quot;)">
+                SN_SHXSQTDW=#{shxsqtdw,jdbcType=VARCHAR},
+            </if>
+            <if test="xzzw != null and !xzzw.equals(&quot;&quot;)">
+                SN_XZZW=#{xzzw,jdbcType=VARCHAR},
+            </if>
+            <if test="xzzwrpsj != null and !xzzwrpsj.equals(&quot;&quot;)">
+                SN_XZZWRPSJ=to_date(#{xzzwrpsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="xcshzzyjsgz != null and !xcshzzyjsgz.equals(&quot;&quot;)">
+                SN_XCSHZZYJSGZ=#{xcshzzyjsgz,jdbcType=VARCHAR},
+            </if>
+            <if test="zjzczsbh != null and !zjzczsbh.equals(&quot;&quot;)">
+                SN_ZJZCZSBH=#{zjzczsbh,jdbcType=VARCHAR},
+            </if>
+            <if test="rzzgqdsj != null and !rzzgqdsj.equals(&quot;&quot;)">
+                SN_RZZGQDSJ=to_date(#{rzzgqdsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="cjgzsj != null and !cjgzsj.equals(&quot;&quot;)">
+                SN_CJGZSJ=to_date(#{cjgzsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="xzzyjszw != null and !xzzyjszw.equals(&quot;&quot;)">
+                SN_XZZYJSZW=#{xzzyjszw,jdbcType=VARCHAR},
+            </if>
+            <if test="rpzgprsj != null and !rpzgprsj.equals(&quot;&quot;)">
+                SN_RPZGPRSJ=to_date(#{rpzgprsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="rzzgspjg != null and !rzzgspjg.equals(&quot;&quot;)">
+                SN_RZZGSPJG=#{rzzgspjg,jdbcType=VARCHAR},
+            </if>
+            <if test="xrdrzyzw != null and !xrdrzyzw.equals(&quot;&quot;)">
+                SN_XRDRZYZW=#{xrdrzyzw,jdbcType=VARCHAR},
+            </if>
+            <if test="derzgqdsj != null and !derzgqdsj.equals(&quot;&quot;)">
+                SN_DERZGQDSJ=to_date(#{derzgqdsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="gjzczy != null and !gjzczy.equals(&quot;&quot;)">
+                SN_GJZCZY=#{gjzczy,jdbcType=VARCHAR},
+            </if>
+            <if test="gjzczsbh != null and !gjzczsbh.equals(&quot;&quot;)">
+                SN_GJZCZSBH=#{gjzczsbh,jdbcType=VARCHAR},
+            </if>
+            <if test="gjzczshdsj != null and !gjzczshdsj.equals(&quot;&quot;)">
+                SN_GJZCZSHDSJ=to_date(#{gjzczshdsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="gjzcspjg != null and !gjzcspjg.equals(&quot;&quot;)">
+                SN_GJZCSPJG=#{gjzcspjg,jdbcType=VARCHAR},
+            </if>
+            <if test="hsjrzggctrhzw != null and !hsjrzggctrhzw.equals(&quot;&quot;)">
+                SN_HSJRZGGCTRHZW=#{hsjrzggctrhzw,jdbcType=VARCHAR},
+            </if>
+            <if test="hshdcjhzmzdprhzw != null and !hshdcjhzmzdprhzw.equals(&quot;&quot;)">
+                SN_HSHDCJHZMZDPRHZW=#{hshdcjhzmzdprhzw,jdbcType=VARCHAR},
+            </if>
+            <if test="cjhzxstthzwhjz != null and !cjhzxstthzwhjz.equals(&quot;&quot;)">
+                SN_CJHZXSTTHZWHJZ=#{cjhzxstthzwhjz,jdbcType=VARCHAR},
+            </if>
+            <if test="sblb != null and !sblb.equals(&quot;&quot;)">
+                SN_SBLB=#{sblb,jdbcType=VARCHAR},
+            </if>
+            <if test="sbzy != null and !sbzy.equals(&quot;&quot;)">
+                SN_SBZY=#{sbzy,jdbcType=VARCHAR},
+            </if>
+            <if test="sbdj != null and !sbdj.equals(&quot;&quot;)">
+                SN_SBDJ=#{sbdj,jdbcType=VARCHAR},
+            </if>
+            <if test="wtjg != null and !wtjg.equals(&quot;&quot;)">
+                SN_WTJG=#{wtjg,jdbcType=VARCHAR},
+            </if>
+            <if test="sbqk != null and !sbqk.equals(&quot;&quot;)">
+                SN_SBQK=#{sbqk,jdbcType=VARCHAR},
+            </if>
+            <if test="sbtjsj != null and !sbtjsj.equals(&quot;&quot;)">
+                SN_TJSH=to_date(#{sbtjsj,jdbcType=VARCHAR},'yyyy-mm-dd'),
+            </if>
+            <if test="sblx != null and !sblx.equals(&quot;&quot;)">
+                SN_SBLX=#{sblx,jdbcType=VARCHAR},
+            </if>
+            <if test="sbtjsj != null and !sbtjsj.equals(&quot;&quot;)">
+                SN_PSYJ=#{sbtjsj,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        WHERE USER_BM=#{userBm}
+    </update>
+
+    <!-- 定义两个sql片段，第一个对应字段名,id属性值任意并且唯一 -->
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="userBm != null and !userBm.equals(&quot;&quot;)">
+                USER_BM,
+            </if>
+            <if test="bgan != null and !bgan.equals(&quot;&quot;)">
+                SN_AN,
+            </if>
+
+                SN_JYXXID,
+
+            <if test="guid != null and !guid.equals(&quot;&quot;)">
+                SN_GUID,
+            </if>
+            <if test="graduateSchool != null and !graduateSchool.equals(&quot;&quot;)">
+                SN_GRADUATE_SCHOOL,
+            </if>
+            <if test="major != null and !major.equals(&quot;&quot;)">
+                SN_MAJOR,
+            </if>
+            <if test="schoolSystem != null and !schoolSystem.equals(&quot;&quot;)">
+                SN_SCHOOL_SYSTEM,
+            </if>
+            <if test="education != null and !education.equals(&quot;&quot;)">
+                SN_EDUCATION,
+            </if>
+            <if test="academicDegree != null and !academicDegree.equals(&quot;&quot;)">
+                SN_ACADEMIC_DEGREE,
+            </if>
+            <if test="graduationTime != null and !graduationTime.equals(&quot;&quot;)">
+                SN_GRADUATION_TIME,
+            </if>
+            <if test="zgxlsb != null and !zgxlsb.equals(&quot;&quot;)">
+                SN_ZGXLSB,
+            </if>
+        </trim>
+    </sql>
+    <!-- 定义第二个sql片段，第二个对应?，key属性值任意并且唯一 -->
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="userBm != null and !userBm.equals(&quot;&quot;)">
+                #{userBm},
+            </if>
+            <if test="bgan != null and !bgan.equals(&quot;&quot;)">
+                #{bgan},
+            </if>
+
+                s_test.nextval,
+
+            <if test="guid != null and !guid.equals(&quot;&quot;)">
+                #{guid},
+            </if>
+            <if test="graduateSchool != null and !graduateSchool.equals(&quot;&quot;)">
+                #{graduateSchool},
+            </if>
+            <if test="major != null and !major.equals(&quot;&quot;)">
+                #{major},
+            </if>
+            <if test="schoolSystem != null and !schoolSystem.equals(&quot;&quot;)">
+                #{schoolSystem},
+            </if>
+            <if test="education != null and !education.equals(&quot;&quot;)">
+                #{education},
+            </if>
+            <if test="academicDegree != null and !academicDegree.equals(&quot;&quot;)">
+                #{academicDegree},
+            </if>
+            <if test="graduationTime != null and !graduationTime.equals(&quot;&quot;)">
+                TO_DATE(#{graduationTime}, 'yyyy-MM-dd'),
+            </if>
+            <if test="zgxlsb != null and !zgxlsb.equals(&quot;&quot;)">
+                #{zgxlsb},
+            </if>
+        </trim>
+    </sql>
+    <!-- 新增学历 -->
+    <insert id="addjyxx" parameterType="com.jwcyzhpt.modules.supervise.entity.jyclxx">
+        insert into SN_EDUCATIONAL_MATERIAL(<include refid="key"/>) values(<include refid="value"/>)
+    </insert>
+
+    <!-- 查询个人端学历集合 -->
+    <select id="finjyclxxBybm" resultMap="jyclxxMap">
+		select SN_GRADUATE_SCHOOL,SN_MAJOR,SN_SCHOOL_SYSTEM,SN_EDUCATION,SN_ACADEMIC_DEGREE,
+
+		    SN_JYXXID,USER_BM,SN_ZGXLSB,SN_AN,to_char(SN_GRADUATION_TIME,'yyyy-mm-dd') as SN_GRADUATION_TIME
+
+        from SN_EDUCATIONAL_MATERIAL
+
+        WHERE USER_BM=#{userBm}
+
+    </select>
+
+    <!-- 删除学历信息 -->
+    <delete id="deljyxx" parameterType="com.jwcyzhpt.modules.supervise.entity.jyclxx">
+        DELETE FROM SN_EDUCATIONAL_MATERIAL WHERE SN_JYXXID=#{jyxxid}
+    </delete>
+
+    <!-- 定义两个sql片段，第一个对应字段名,id属性值任意并且唯一 -->
+    <sql id="zyzgkey">
+        <trim suffixOverrides=",">
+
+                SN_ZYZGID,
+
+            <if test="hdsj != null and !hdsj.equals(&quot;&quot;)">
+                SN_HDSJ,
+            </if>
+            <if test="hdzyzgmc != null and !hdzyzgmc.equals(&quot;&quot;)">
+                SN_HDZYZGMC,
+            </if>
+
+            <if test="guid != null and !guid.equals(&quot;&quot;)">
+                SN_GUID,
+            </if>
+            <if test="hdzyzgzy != null and !hdzyzgzy.equals(&quot;&quot;)">
+                SN_HDZYZGZY,
+            </if>
+
+            <if test="userBm != null and !userBm.equals(&quot;&quot;)">
+                USER_BM,
+            </if>
+
+        </trim>
+    </sql>
+    <!-- 定义第二个sql片段，第二个对应?，key属性值任意并且唯一 -->
+    <sql id="zyzgvalue">
+        <trim suffixOverrides=",">
+
+
+            s_test.nextval,
+
+
+            <if test="hdsj != null and !hdsj.equals(&quot;&quot;)">
+                TO_DATE(#{hdsj}, 'yyyy-MM-dd'),
+            </if>
+
+            <if test="hdzyzgmc != null and !hdzyzgmc.equals(&quot;&quot;)">
+                #{hdzyzgmc},
+            </if>
+
+            <if test="guid != null and !guid.equals(&quot;&quot;)">
+                #{guid},
+            </if>
+
+            <if test="hdzyzgzy != null and !hdzyzgzy.equals(&quot;&quot;)">
+                #{hdzyzgzy},
+            </if>
+
+            <if test="userBm != null and !userBm.equals(&quot;&quot;)">
+                #{userBm},
+            </if>
+
+        </trim>
+    </sql>
+    <!-- 新增职业资格信息 -->
+    <insert id="addzyzgxx" parameterType="com.jwcyzhpt.modules.supervise.entity.zyzgclxx">
+          insert into SN_PROFESSIONAL_QUALIFICATION(<include refid="zyzgkey"/>) values(<include refid="zyzgvalue"/>)
+      </insert>
+
+    <!--   查询个人端职业资格信息集合 -->
+    <select id="finzyzgxxBybm" resultMap="zyzgxxMap">
+           select SN_ZYZGID,SN_HDZYZGMC,SN_HDZYZGZY,USER_BM,
+
+              to_char(SN_HDSJ,'yyyy-mm-dd') as SN_HDSJ
+
+           from SN_PROFESSIONAL_QUALIFICATION
+
+           WHERE USER_BM=#{userBm}
+
+       </select>
+
+    <!--   删除职业资格信息 -->
+      <delete id="delzyzg" parameterType="com.jwcyzhpt.modules.supervise.entity.zyzgclxx">
+          DELETE FROM SN_PROFESSIONAL_QUALIFICATION WHERE SN_ZYZGID=#{zyzgid}
+      </delete>
+
+    <!-- 定义两个sql片段，第一个对应字段名,id属性值任意并且唯一 -->
+    <sql id="hjxxkey">
+        <trim suffixOverrides=",">
+
+            SN_HJQKID,
+
+            <if test="hjsj != null and !hjsj.equals(&quot;&quot;)">
+                SN_HJSJ,
+            </if>
+            <if test="sjdw != null and !sjdw.equals(&quot;&quot;)">
+                SN_SJDW,
+            </if>
+
+            <if test="guid != null and !guid.equals(&quot;&quot;)">
+                SN_GUID,
+            </if>
+            <if test="hdhj != null and !hdhj.equals(&quot;&quot;)">
+                SN_HDHJ,
+            </if>
+
+            <if test="userBm != null and !userBm.equals(&quot;&quot;)">
+                USER_BM,
+            </if>
+
+        </trim>
+    </sql>
+    <!-- 定义第二个sql片段，第二个对应?，key属性值任意并且唯一 -->
+    <sql id="hjxxvalue">
+        <trim suffixOverrides=",">
+
+            s_test.nextval,
+
+            <if test="hjsj != null and !hjsj.equals(&quot;&quot;)">
+                TO_DATE(#{hjsj}, 'yyyy-MM-dd'),
+            </if>
+
+            <if test="sjdw != null and !sjdw.equals(&quot;&quot;)">
+                #{sjdw},
+            </if>
+
+            <if test="guid != null and !guid.equals(&quot;&quot;)">
+                #{guid},
+            </if>
+
+            <if test="hdhj != null and !hdhj.equals(&quot;&quot;)">
+                #{hdhj},
+            </if>
+
+            <if test="userBm != null and !userBm.equals(&quot;&quot;)">
+                #{userBm},
+            </if>
+
+        </trim>
+    </sql>
+    <!-- 新增获奖信息 -->
+    <insert id="addhjxx" parameterType="com.jwcyzhpt.modules.supervise.entity.hjqkxx">
+        insert into SN_AWARD_WINNING (<include refid="hjxxkey"/>) values(<include refid="hjxxvalue"/>)
+    </insert>
+
+    <!--   查询个人端获奖信息集合 -->
+    <select id="finhjxxBybm" resultMap="hjxxMap">
+           select SN_HJQKID,SN_SJDW,SN_HDHJ,USER_BM,
+
+              to_char(SN_HJSJ,'yyyy-mm-dd') as SN_HJSJ
+
+           from SN_AWARD_WINNING
+
+           WHERE USER_BM=#{userBm}
+
+       </select>
+
+    <!--   删除获奖信息 -->
+    <delete id="delhjxx" parameterType="com.jwcyzhpt.modules.supervise.entity.hjqkxx">
+          DELETE FROM SN_AWARD_WINNING  WHERE SN_HJQKID=#{hjqkid}
+      </delete>
+</mapper>

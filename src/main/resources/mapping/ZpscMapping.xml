@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jwcyzhpt.modules.uploadAttachment.dao.ZpscMapper">
+
+    <resultMap id="PhotoMap" type="com.jwcyzhpt.modules.uploadAttachment.entity.Photo">
+        <result column="BIA_ID" jdbcType="VARCHAR" property="biaId"/>
+        <result column="SN_GUID" jdbcType="VARCHAR" property="biaGuId"/>
+        <result column="BIA_UESR_BM" jdbcType="VARCHAR" property="biaUesrBm"/>
+        <result column="BIA_ATTACHMENT_TYPE" jdbcType="VARCHAR" property="biaAttachmentType"/>
+        <result column="BIA_ATTACHMENT_NAME" jdbcType="VARCHAR" property="biaAttachmentName"/>
+        <result column="BIA_ATTACHMENT_BLOB" jdbcType="BLOB" property="biaAttachmentBlob"/>
+        <result column="BIA_CREATE_TIME" jdbcType="DATE" property="biaCreateTime"/>
+    </resultMap>
+
+    <insert id="addZp" parameterType="com.jwcyzhpt.modules.uploadAttachment.entity.Photo">
+        <selectKey keyProperty="biaId" order="BEFORE" resultType="java.lang.String">
+            select SEQ_BASIC_INFORMATION_ATTA.NEXTVAL as biaId from DUAL
+        </selectKey>
+        insert into SN_BASIC_PHOTO
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="biaId != null">
+                BIA_ID,
+            </if>
+            <if test="biaGuId != null">
+                SN_GUID,
+            </if>
+            <if test="biaUesrBm != null">
+                BIA_UESR_BM,
+            </if>
+            <if test="biaAttachmentType != null">
+                BIA_ATTACHMENT_TYPE,
+            </if>
+            <if test="biaAttachmentName != null">
+                BIA_ATTACHMENT_NAME,
+            </if>
+            <if test="biaAttachmentBlob != null">
+                BIA_ATTACHMENT_BLOB,
+            </if>
+            <if test="biaCreateTime != null">
+                BIA_CREATE_TIME,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="biaId != null">
+                #{biaId},
+            </if>
+            <if test="biaGuId != null">
+                #{biaGuId},
+            </if>
+            <if test="biaUesrBm != null">
+                #{biaUesrBm},
+            </if>
+            <if test="biaAttachmentType != null">
+                #{biaAttachmentType},
+            </if>
+            <if test="biaAttachmentName != null">
+                #{biaAttachmentName},
+            </if>
+            <if test="biaAttachmentBlob != null">
+                #{biaAttachmentBlob},
+            </if>
+            <if test="biaCreateTime != null">
+                #{biaCreateTime},
+            </if>
+        </trim>
+    </insert>
+    <!--预览-->
+    <select id="previewzp" resultMap="PhotoMap">
+        SELECT * FROM SN_BASIC_PHOTO WHERE 1=1
+        <if test="biaId != null and !biaId.equals(&quot;&quot;)">
+           and BIA_ID = #{biaId}
+        </if>
+    </select>
+    <!--删除照片-->
+    <delete id="delZp" parameterType="java.lang.String">
+        DELETE FROM SN_BASIC_PHOTO WHERE BIA_UESR_BM = #{biaUesrBm}
+    </delete>
+</mapper>
