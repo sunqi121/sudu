@@ -31,7 +31,8 @@ public class jlxmglController {
 			@RequestParam(value = "page", defaultValue = "1", required = false) Integer page,
 			@RequestParam(value = "rows", defaultValue = "5", required = false) Integer rows,
 			jlxmglVo jlxm,HttpServletRequest request) {
-		System.out.println("666jlxm:"+jlxm);
+		/*System.out.println("666jlxm:"+jlxm);*/
+		System.out.println("我是远程githubg代码");
 			return jlxmglSer.findJlxm(page,rows,jlxm);
 
 	}
